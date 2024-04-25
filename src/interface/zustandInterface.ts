@@ -4,4 +4,7 @@ export interface AppStoreInterface {
   decrease: () => void;
   username: string;
   updateName: (username: string) => void;
+  userGithub: { [key: string]: any };
+  getUserGithub: (username: string) => void;
+  logoutGithub: () => void;
 }

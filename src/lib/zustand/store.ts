@@ -7,4 +7,12 @@ export const useAppStore = create<AppStoreInterface>((set) => ({
   decrease: () => set((state) => ({ count: state.count - 1 })),
   username: "Hasan Molla",
   updateName: (username) => set({ username }),
+  userGithub: {},
+  getUserGithub: async (username) => {
+    const responses = await fetch(`https://api.github.com/users/${username}`);
+    const userGithub = await responses.json();
+
+    set({ userGithub });
+  },
+  logoutGithub: () => set({ userGithub: {} }),
 }));

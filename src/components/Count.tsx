@@ -14,14 +14,17 @@ const Count = () => {
   console.log("Running count");
 
   return (
-    <div className="flex justify-center items-center gap-x-3">
-      <button className="flex justify-center items-center w-8 h-8 bg-black/75 font-semibold text-white rounded-lg" onClick={decrease}>
-        -
-      </button>
-      <span>Count: {count}</span>
-      <button className="flex justify-center items-center w-8 h-8 bg-black/75 font-semibold text-white rounded-lg" onClick={increase}>
-        +
-      </button>
+    <div className="flex flex-col justify-center items-center gap-x-3">
+      <h1 className="font-light mr-auto mb-5">Counter</h1>
+      <div className="flex justify-center items-center gap-x-3">
+        <button className="flex justify-center items-center w-8 h-8 bg-black/75 font-semibold text-white rounded-lg" onClick={decrease}>
+          -
+        </button>
+        <span>Count: {count}</span>
+        <button className="flex justify-center items-center w-8 h-8 bg-black/75 font-semibold text-white rounded-lg" onClick={increase}>
+          +
+        </button>
+      </div>
     </div>
   );
 };
