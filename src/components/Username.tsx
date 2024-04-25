@@ -1,11 +1,15 @@
 "use client";
 
 import { useAppStore } from "@/lib/zustand/store";
+import { useShallow } from "zustand/react/shallow";
 
 const Username = () => {
-  // const store = useAppStore();
-  const username = useAppStore((state) => state.username);
-  const updateName = useAppStore((state) => state.updateName);
+  const { username, updateName } = useAppStore(
+    useShallow((state) => ({
+      username: state.username,
+      updateName: state.updateName,
+    }))
+  );
   console.log("Running username");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
